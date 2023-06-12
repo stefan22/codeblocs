@@ -1,17 +1,27 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import '@styles/global.css'
+import Nav from '@components/Nav'
 
 export const metadata = {
-  title: 'Create Next App',
-  description: 'Code blocks with NextJS 13 and Tailwind',
+  title: 'Code Blocs',
+  description: `Contrary to popular belief, Lorem Ipsum is not simply random text.
+      It has roots in a piece of classical Latin literature from 45 BC, making 
+      it over 2000 years old`
 }
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+const Layout = ({children}) => (
+    <html lang='en-UK'>
+    <body>
+    <div className='main'>
+      <div className='gradient' />
+    </div>
+
+    <header className='app'>
+        <Nav />
+      {children}
+    </header>
+
+    </body>
     </html>
-  )
-}
+)
+
+export default Layout
