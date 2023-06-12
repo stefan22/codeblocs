@@ -1,14 +1,23 @@
 "use client";
-
+import { useEffect, useState } from 'react'
 import Link from "next/link";
 import Image from "next/image";
-import { signIn, signOut } from "next-auth/react";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 
 const Nav = () => {
     const isUserLoggedIn = true;
+    const [providers, setProviders] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            const res = await getProviders();
+            setProviders(res);
+        })();
+    }, []);
+
     return (
-        <nav className='flex-between w-full mb-16 pt-3'>
+        <nav className='flex place-content-between w-full mb-16 pt-3'>
             <Link href='/' className='flex gap-2 flex-center'>
                 <Image
                     src='/static/images/codeblock.svg'
@@ -66,13 +75,14 @@ const Nav = () => {
                 {isUserLoggedIn ? (
                     <div className='flex'>
                         <Image
-                            src={'/static/images/codeblock.svg'}
-                            width={37}
-                            height={37}
+                            src={'/static/images/profile.svg'}
+                            width={31}
+                            height={31}
                             className='rounded-full'
                             alt='profile'
                             onClick={() => setToggleDropdown(!toggleDropdown)}
                         />
+xs
 
 
                     </div>
