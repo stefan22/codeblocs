@@ -98,6 +98,21 @@ body {
         @apply max-sm:hidden font-BeVietnam text-gray-dark font-semibold flex-col flex justify-center
     }
 
+    .logo_text {
+        @apply max-sm:hidden text-lg text-black;
+    }
+
+    .dropdown {
+        @apply absolute right-0 top-full mt-4 p-5
+        rounded-lg border-b-2 bg-white border-b-gray-light min-w-[150px] min-h-[150px]
+        gap-2 items-end;
+    }
+
+    .dropdown_link {
+        @apply text-sm font-normal;
+    }
+
+
 
 }
 

@@ -8,6 +8,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const Nav = () => {
     const isUserLoggedIn = true;
     const [providers, setProviders] = useState(null);
+    const [ toggleDropdown, setToggleDropdown ] = useState(false)
 
     useEffect(() => {
         (async () => {
@@ -33,8 +34,8 @@ const Nav = () => {
             <div className='sm:flex hidden'>
                 {isUserLoggedIn ? (
                     <div className='flex gap-3 md:gap-5'>
-                        <Link href='/' className='black_btn'>
-                            Create Post
+                        <Link href='/codebloc' className='black_btn'>
+                            Deskbloc
                         </Link>
 
                         <button type='button' onClick={signOut} className='outline_btn'>
@@ -71,18 +72,46 @@ const Nav = () => {
             </div>
 
             {/* Mobile Navigation */}
-            <div className='sm:hidden flex relative'>
+            <div className='sm:hidden flex flex-col'>
                 {isUserLoggedIn ? (
-                    <div className='flex'>
+                    <div className='flex flex-col items-end relative'>
                         <Image
                             src={'/static/images/profile.svg'}
-                            width={31}
+                            width={30}
                             height={31}
-                            className='rounded-full'
+                            className='rounded-full h-31 w-31'
                             alt='profile'
-                            onClick={() => setToggleDropdown(!toggleDropdown)}
+                            onClick={() => setToggleDropdown((prevState) => !prevState)}
                         />
-xs
+
+                        {toggleDropdown && (
+                            <div className='dropdown flex h-full flex-col items-end'>
+                                <Link
+                                    href='/profile'
+                                    className='dropdown_link'
+                                    onClick={() => setToggleDropdown(false)}
+                                >
+                                    Profile
+                                </Link>
+                                <Link
+                                    href='/codebloc'
+                                    className='dropdown_link'
+                                    onClick={() => setToggleDropdown(false)}
+                                >
+                                    Codebloc
+                                </Link>
+                                <button
+                                    type='button'
+                                    onClick={() => {
+                                        setToggleDropdown(false);
+                                        signOut();
+                                    }}
+                                    className='mt-5 w-full black_btn'
+                                >
+                                    Sign Out
+                                </button>
+                            </div>
+                        )}
 
 
                     </div>
