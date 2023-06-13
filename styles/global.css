@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-color: '#222222';
+    --background-color: '#ffffff';
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 300;
+    color: var(--foreground-color);
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 120px 24px 160px 24px;
+    pointer-events: none;
+}
+
+.main:before {
+    background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+    position: absolute;
+    content: "";
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.gradient {
+    z-index: 3;
+    width: 100%;
+    max-width: 640px;
+    background-image: radial-gradient(
+            at 27% 37%,
+            hsla(215, 98%, 61%, 1) 0px,
+            transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+    position: absolute;
+    content: "";
+    height: 100%;
+    filter: blur(100px) saturate(150%);
+    top: 80px;
+    opacity: 0.15;
+}
+
+@media screen and (max-width: 640px) {
+    .main {
+        padding: 0;
+    }
+}
+
+@layer base {
+    .app {
+        @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+    }
+
+    .black_btn {
+        @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm flex items-center justify-center;
+    }
+
+    .head_text {
+        @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+    }
+
+    .orange_gradient {
+        @apply bg-gradient-to-r from-amber-400 to-orange bg-clip-text text-transparent;
+    }
+
+    .green_gradient {
+        @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
+    }
+
+    .blue_gradient {
+        @apply bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent;
+    }
+
+    .desc {
+        @apply mt-5 text-base text-neutral-400;
+    }
+
+    .logo_text {
+        @apply max-sm:hidden font-BeVietnam text-gray-dark font-semibold flex-col flex justify-center
+    }
+
+    .logo_text {
+        @apply max-sm:hidden text-lg text-black;
+    }
+
+    .dropdown {
+        @apply absolute right-0 top-full mt-4 p-5
+        rounded-lg border-b-2 bg-white border-b-gray-light min-w-[150px] min-h-[150px]
+        gap-2 items-end;
+    }
+
+    .dropdown_link {
+        @apply text-sm font-normal;
+    }
+
+
+
+}
+

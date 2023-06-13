@@ -16,3 +16,6 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to start development.
 
 
+### Initial layout
+
+![Initial Layout](/public/static/images/initial-layout.png)
