@@ -1,5 +1,6 @@
 import '@styles/global.css'
 import Nav from '@components/Nav'
+import Provider from "@components/AuthProvider";
 
 export const metadata = {
   title: 'Code Blocs',
@@ -11,6 +12,7 @@ export const metadata = {
 const Layout = ({children}) => (
     <html lang='en-UK'>
     <body>
+    <Provider>
     <div className='main'>
       <div className='gradient' />
     </div>
@@ -19,7 +21,7 @@ const Layout = ({children}) => (
         <Nav />
       {children}
     </header>
-
+    </Provider>
     </body>
     </html>
 )

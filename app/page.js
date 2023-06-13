@@ -14,10 +14,12 @@ const Home = () => (
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
           doloremque veritatis et quasi architecto dicta.
       </p>
-        <CodeCard />
-        <CodeCards />
-        <Form />
-        <Profile />
+        <div className='flex items-center flex-col my-10'>
+            <CodeCard />
+            <CodeCards />
+            <Form />
+            <Profile />
+        </div>
 
     </section>
 );
