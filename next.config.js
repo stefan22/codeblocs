@@ -5,7 +5,7 @@ const nextConfig = {
         serverComponentsExternalPackages: ["mongoose"],
     },
     images: {
-        domains: ['cloudinary'],
+        domains: ['cloudinary', process.env.GOOGLE_CLIENT_ID],
     },
     webpack(config) {
         config.experiments = {
