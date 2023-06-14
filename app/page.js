@@ -20,7 +20,6 @@ const Home = () => (
             <Form />
             <Profile />
         </div>
-
     </section>
 );
 

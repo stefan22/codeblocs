@@ -1,6 +1,6 @@
 import '@styles/global.css'
 import Nav from '@components/Nav'
-import Provider from "@components/AuthProvider";
+import Provider from "@components/AuthProvider"
 
 export const metadata = {
   title: 'Code Blocs',
