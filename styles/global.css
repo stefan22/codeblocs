@@ -75,7 +75,7 @@ body {
     }
 
     .head_text {
-        @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+        @apply mt-5 text-4xl font-bold leading-[1.15] sm:text-5xl;
     }
 
     .orange_gradient {
@@ -83,11 +83,11 @@ body {
     }
 
     .green_gradient {
-        @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
+        @apply bg-gradient-to-r from-green-400 to-green bg-clip-text text-transparent;
     }
 
     .blue_gradient {
-        @apply bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent;
+        @apply bg-gradient-to-r from-blue to-sky-600 bg-clip-text text-transparent;
     }
 
     .desc {
