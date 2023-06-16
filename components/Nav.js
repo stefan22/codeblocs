@@ -5,7 +5,9 @@ import Image from "next/image";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Nav = () => {
-    const isUserLoggedIn = true;
+    const { data: session } = useSession()
+    console.log('what is session ', session)
+
     const [providers, setProviders] = useState(null);
     const [ toggleDropdown, setToggleDropdown ] = useState(false)
 
@@ -16,6 +18,7 @@ const Nav = () => {
         })();
     }, []);
 
+    console.log('providers ', providers)
     return (
         <nav className='flex place-content-between w-full mb-16 pt-3'>
             <Link href='/' className='flex gap-2 flex-center'>
@@ -31,7 +34,7 @@ const Nav = () => {
 
             {/* Desktop Navigation */}
             <div className='sm:flex hidden'>
-                {isUserLoggedIn ? (
+                {session?.user ? (
                     <div className='flex gap-3 md:gap-5'>
                         <Link href='/codebloc' className='black_btn'>
                             Deskbloc
@@ -41,9 +44,10 @@ const Nav = () => {
                             Sign Out
                         </button>
 
-                        <Link className='flex flex-col justify-center' href='/profile'>
+                        <Link className='flex flex-col justify-center'
+                              href='/profile'>
                             <Image
-                                src={'/static/images/profile.svg'}
+                                src={session?.user.image}
                                 width={27}
                                 height={27}
                                 className='rounded-full'
@@ -59,7 +63,7 @@ const Nav = () => {
                                     type='button'
                                     key={provider.name}
                                     onClick={() => {
-                                        //signIn();
+                                        signIn(provider?.id);
                                     }}
                                     className='black_btn'
                                 >
@@ -72,7 +76,7 @@ const Nav = () => {
 
             {/* Mobile Navigation */}
             <div className='sm:hidden flex flex-col'>
-                {isUserLoggedIn ? (
+                {session?.user ? (
                     <div className='flex flex-col items-end relative'>
                         <Image
                             src={'/static/images/profile.svg'}
@@ -122,7 +126,7 @@ const Nav = () => {
                                     type='button'
                                     key={provider.name}
                                     onClick={() => {
-                                        //signIn();
+                                        signIn(provider?.id);
                                     }}
                                     className='black_btn'
                                 >
