@@ -36,8 +36,8 @@ const Nav = () => {
             <div className='sm:flex hidden'>
                 {session?.user ? (
                     <div className='flex gap-3 md:gap-5'>
-                        <Link href='/codebloc' className='black_btn'>
-                            Deskbloc
+                        <Link href='/create-codebloc' className='black_btn'>
+                            Create Codebloc
                         </Link>
 
                         <button type='button' onClick={signOut} className='outline_btn'>
@@ -79,11 +79,11 @@ const Nav = () => {
                 {session?.user ? (
                     <div className='flex flex-col items-end relative'>
                         <Image
-                            src={'/static/images/profile.svg'}
+                            src={session?.user.image}
                             width={30}
                             height={31}
-                            className='rounded-full h-31 w-31'
                             alt='profile'
+                            className='rounded-full'
                             onClick={() => setToggleDropdown((prevState) => !prevState)}
                         />
 
@@ -97,11 +97,11 @@ const Nav = () => {
                                     Profile
                                 </Link>
                                 <Link
-                                    href='/codebloc'
+                                    href='/create-codebloc'
                                     className='dropdown_link'
                                     onClick={() => setToggleDropdown(false)}
                                 >
-                                    Codebloc
+                                    Create Codebloc
                                 </Link>
                                 <button
                                     type='button'

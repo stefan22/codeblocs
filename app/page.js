@@ -1,6 +1,5 @@
 import CodeCard from '@components/CodeCard'
 import CodeCards from '@components/CodeCards'
-import Form from '@components/Form'
 import Profile from '@components/Profile'
 
 const Home = () => (
@@ -17,7 +16,6 @@ const Home = () => (
         <div className='flex items-center flex-col my-10'>
             <CodeCard />
             <CodeCards />
-            <Form />
             <Profile />
         </div>
     </section>
