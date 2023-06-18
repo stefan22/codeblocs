@@ -2,7 +2,6 @@ import Codebloc from "@models/codebloc";
 import { connectToDB } from "@utils/mongoDB";
 
 export const GET = async (req) => {
-    console.log('wic ',req)
     try {
         await connectToDB()
 

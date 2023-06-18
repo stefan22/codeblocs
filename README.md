@@ -15,13 +15,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to start development.
 
+Node v18
 
 ### Initial layout
 
 ![Initial Layout](/public/static/images/initial-layout.png)
-
-
-### Google provider
-
-OAuth access is limited to the **test users** listed on the OAuth consent screen for this Google account.    
-
