@@ -1,6 +1,4 @@
-import CodeCard from '@components/CodeCard'
-import CodeCards from '@components/CodeCards'
-import Profile from '@components/Profile'
+import SnippetsPieces from "@components/SnippetsPieces";
 
 const Home = () => (
     <section className='w-full flex-center flex-col'>
@@ -14,9 +12,9 @@ const Home = () => (
           doloremque veritatis et quasi architecto dicta.
       </p>
         <div className='flex items-center flex-col my-10'>
-            <CodeCard />
-            <CodeCards />
-            <Profile />
+
+            <SnippetsPieces />
+
         </div>
     </section>
 );
